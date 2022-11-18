@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from "react-router-dom";
-import { MyContext } from './Details';
+import { MyContext } from '../App';
+
 
 const Home = () => {
     const matirRing = useContext(MyContext);

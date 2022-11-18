@@ -1,26 +1,29 @@
-import React, { createContext, useState } from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate, } from 'react-router-dom';
+import { MyContext } from '../App';
 
-export const MyContext = createContext('matir ring');
+
 
 
 const Details = () => {
-    // const [inputText, setInputText] = useState('');
+    const [inputText, setInputText] = useState('');
     // const [textArea, setTextArea] = useState('');
     const navigation = useNavigate();
 
 
     const formHandel = e => {
         e.preventDefault();
-
-        // console.log(inputText, textArea)
+        const text = e.target.input.value;
+        const texttwo = e.target.textArea.value;
+        setInputText([text, texttwo]);
+        // console.log(text, texttwo)
         navigation('/')
     }
 
     // onChange={(e) => setInputText(e.target.value)}
     // onChange={(e) => setTextArea(e.target.value)}
     return (
-        <MyContext.Provider value={formHandel}>
+        <MyContext.Provider value={inputText}>
             <div className='text-center mt-44 drop-shadow-2xl'>
                 <h2 className='text-2xl font-bold py-10 font-serif'>Drop Your New Notes</h2>
                 <form action="" onSubmit={formHandel}>
