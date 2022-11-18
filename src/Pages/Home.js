@@ -3,14 +3,17 @@ import { Link } from "react-router-dom";
 import { MyContext } from '../App';
 
 
+
 const Home = () => {
-    const matirRing = useContext(MyContext);
-    console.log(matirRing);
+
+    const { text, setText } = useContext(MyContext);
+    console.log(text)
+
     return (
         <div className='w-10/12 mx-auto mt-10'>
-            <h2 className='text-2xl font-bold py-10 font-serif text-center'>All Notes</h2>
+            <h2 className='text-2xl font-bold p-5 font-serif text-center'>All Notes</h2>
             <div className='text-center'>
-                <Link to='/details'><button className='uppercase px-4 py-2 bg-teal-500 rounded my-10 font-serif '>Add Nots</button></Link>
+                <Link to='/details'><button className='uppercase px-5 py-3 bg-[#0ea5e9] rounded my-10 font-serif text-white hover:bg-slate-500'>Add Nots</button></Link>
             </div>
 
             <table>
@@ -21,36 +24,16 @@ const Home = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Alfreds Futterkiste</td>
-                        <td>Maria Anders</td>
 
-                    </tr>
-                    <tr>
-                        <td>Centro comercial Moctezuma</td>
-                        <td>Francisco Chang</td>
+                    {
+                        text.map(e => <>
+                            <tr>
+                                <td>{e.name}</td>
+                                <td>{e.text}</td>
+                            </tr>
+                        </>)
+                    }
 
-                    </tr>
-                    <tr>
-                        <td>Ernst Handel</td>
-                        <td>Roland Mendel</td>
-
-                    </tr>
-                    <tr>
-                        <td>Island Trading</td>
-                        <td>Helen Bennett</td>
-
-                    </tr>
-                    <tr>
-                        <td>Laughing Bacchus Winecellars</td>
-                        <td>Yoshi Tannamuri</td>
-
-                    </tr>
-                    <tr>
-                        <td>Magazzini Alimentari Riuniti</td>
-                        <td>Giovanni Rovelli</td>
-
-                    </tr>
                 </tbody>
             </table>
 
