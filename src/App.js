@@ -10,9 +10,11 @@ export const MyContext = createContext('');
 
 
 function App() {
-  const [text, setText] = useState([]);
+
+  const [nots, setNots] = useState([]);
+
   return (
-    <MyContext.Provider value={{ text, setText }}>
+    <MyContext.Provider value={{ nots, setNots }}>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/details' element={<Details />} />
