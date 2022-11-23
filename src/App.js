@@ -4,20 +4,26 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home';
 import Details from './Pages/Details';
 import DataNotFound from './Pages/DataNotFound';
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
+import UpdateNote from './Pages/UpdateNote';
 
 export const MyContext = createContext('');
 
 
 function App() {
 
-  const [nots, setNots] = useState([]);
+  const [notes, setNotes] = useState([]);
+  useEffect(() => {
+    const localNots = localStorage.getItem("notes");
+    setNotes(JSON.parse(localNots));
+  }, [])
 
   return (
-    <MyContext.Provider value={{ nots, setNots }}>
+    <MyContext.Provider value={{ notes, setNotes }}>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/details' element={<Details />} />
+        <Route path='/updatesnote/:id' element={<UpdateNote />} />
         <Route path='*' element={<DataNotFound />} />
       </Routes>
     </MyContext.Provider>
