@@ -34,20 +34,10 @@ const UpdateNote = () => {
     const handelChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
-        const status = e.target.value;
         const updateData = { ...note }
-        updateData[name, status] = value;
-        // updateData = status;
-        console.log(updateData)
+        updateData[name] = value;
         setNote(updateData);
     }
-
-    // const handelStatus = (e) => {
-    //     const status = e.target.value;
-    //     // const updateStatus = { ...note }
-    //     setNote([...note, status])
-    // }
-
 
     return (
         <div className='text-center mt-32'>
@@ -69,9 +59,9 @@ const UpdateNote = () => {
                 />
                 <div className='mb-10 text-center mt-5'>
                     <label htmlFor="notes" className='text-lg font-bold'>Select: </label>
-                    <select id="notes" name="notelist" form="noteform" onChange={handelChange}>
-                        <option value={'unread'}>Unread</option>
-                        <option value={'read'}>Read</option>
+                    <select id="notes" name="status" form="noteform" value={note?.status} onChange={handelChange}>
+                        <option value='unread'>Unread</option>
+                        <option value='read'>Read</option>
                     </select>
                 </div>
                 <PrimaryButton type='submit'>Update</PrimaryButton>
