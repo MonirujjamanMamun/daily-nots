@@ -7,9 +7,9 @@ import Form from './Form';
 const Details = () => {
 
     return (
-        <div className='text-center mt-24 drop-shadow-2xl'>
+        <div className='flex justify-center'>
             <h2 className='text-2xl font-bold py-10 font-serif'>Drop Your New Notes</h2>
-            <Form />
+            {/* <Form /> */}
         </div>
 
     );

@@ -14,7 +14,6 @@ const UpdateNote = () => {
     const [note, setNote] = useState('');
     const navigation = useNavigate();
 
-    console.log(note)
 
     useEffect(() => {
         const preveusNote = notes.find(note => note.id === id);

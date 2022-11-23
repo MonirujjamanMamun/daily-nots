@@ -6,6 +6,7 @@ import Details from './Pages/Details';
 import DataNotFound from './Pages/DataNotFound';
 import { createContext, useEffect, useState } from 'react';
 import UpdateNote from './Pages/UpdateNote';
+import Form from './Pages/Form';
 
 export const MyContext = createContext('');
 
@@ -22,7 +23,7 @@ function App() {
     <MyContext.Provider value={{ notes, setNotes }}>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/details' element={<Details />} />
+        <Route path='/form' element={<Form />} />
         <Route path='/updatesnote/:id' element={<UpdateNote />} />
         <Route path='*' element={<DataNotFound />} />
       </Routes>
