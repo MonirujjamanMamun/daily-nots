@@ -10,7 +10,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 const Form = () => {
     const { notes, setNotes } = useContext(MyContext);
-    const [formData, setFormData] = useState({ id: uuidv4(), title: '', description: '', status: 'Unread' });
+    const [formData, setFormData] = useState({ id: uuidv4(), title: '', description: '', status: 'unread' });
     const navigation = useNavigate();
 
 
@@ -33,39 +33,12 @@ const Form = () => {
 
     return (
         <div>
-
-            {/* 
-            <form onSubmit={formHandel}>
-                <div>
-                    <InputField
-                        className="w-9/12"
-                        placeholder={"Nots Titel"}
-                        name={"title"}
-                        type={"text"}
-                        required={true}
-                        onChange={handelChange}
-                    />
-                </div>
-                <div>
-                    <TextArea
-                        className=''
-                        placeholder={"Not's Details"}
-                        name={"description"}
-                        required={true}
-                        onChange={handelChange}
-                    />
-                </div>
-
-
-            </form> */}
-
-
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col justify-center align-middle">
                     <div className="text-center lg:text-left">
                         <h1 className="text-3xl font-bold py-10 font-serif">Drop Your New Notes</h1>
-
                     </div>
+
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={formHandel} className="card-body">
                             <div className="form-control">
@@ -86,14 +59,13 @@ const Form = () => {
                                 </label>
                                 <TextArea
                                     className="input input-bordered"
-                                    // placeholder={"Not Details"}
                                     name={"description"}
                                     required={true}
                                     onChange={handelChange}
                                 />
                             </div>
                             <div className="form-control mt-6">
-                                <PrimaryButton type='submit'>Submit</PrimaryButton>
+                                <PrimaryButton className='font-mono font-bold' type='submit'>Submit</PrimaryButton>
                             </div>
                         </form>
                     </div>

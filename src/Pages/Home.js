@@ -18,8 +18,6 @@ const Home = () => {
     const navigate = useNavigate()
 
 
-    // console.log(searchData)
-
     const deleteNote = (id) => {
         alert('Are you confirm')
         const newText = [...notes].filter(note => note.id !== id);
@@ -32,18 +30,12 @@ const Home = () => {
     }
 
     const searchHandel = (e) => {
-        // e.preventDefault();
         const searchText = e.target.value.toLowerCase();
         const filterData = notes.filter(note => note.title.toLowerCase().includes(searchText))
         setData(filterData)
     }
 
 
-
-
-
-    // console.log(status)
-    // console.log(data)
     useEffect(() => {
         if (status === '') {
             setData(notes);
@@ -56,21 +48,21 @@ const Home = () => {
 
     return (
         <div className='w-10/12 mx-auto mt-10'>
-            <h2 className='text-2xl font-bold p-5 font-serif text-center'>All Notes</h2>
+            <h2 className='text-2xl font-bold p-5 text-center font-mono uppercase'>All Notes</h2>
             <div className='flex justify-center'>
-                <Link to='/form'> <PrimaryButton>Add Nots</PrimaryButton></Link>
+                <Link to='/form'> <PrimaryButton className='font-mono font-bold'>Add Nots</PrimaryButton></Link>
             </div>
 
             <div className='flex justify-between items-center mb-5'>
 
                 {/* togol area  */}
                 <div className='mb-10 text-end'>
-                    <label htmlFor="notes" className='text-lg font-bold'>Select: </label>
+                    <label htmlFor="notes" className="label-text text-xl font-mono font-bold">Select: </label>
                     <select name="notelist" form="noteform"
                         onChange={(e) => setStatus(e.target.value)}>
-                        <option value="">All</option>
-                        <option value="unread">Unread</option>
-                        <option value="read">Read</option>
+                        <option className="label-text font-mono font-bold" value="">All</option>
+                        <option className="label-text font-mono font-bold" value="unread">Unread</option>
+                        <option className="label-text font-mono font-bold" value="read">Read</option>
                     </select>
                 </div>
 
@@ -80,7 +72,7 @@ const Home = () => {
                         <InputField type='text'
                             placeholder='Search…' className="input input-bordered"
                             onChange={searchHandel} name='search' />
-                        <button className="btn btn-square" type='submit'>
+                        <button className="btn btn-square">
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 className="h-6 w-6" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor"><path
@@ -91,13 +83,14 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+
             <Table>
                 <Thead>
                     <Tr>
-                        <Th>Titel</Th>
-                        <Th>Description</Th>
-                        <Th>Status</Th>
-                        <Th>Action</Th>
+                        <Th className="label-text text-xl font-mono font-bold">Titel</Th>
+                        <Th className="label-text text-xl font-mono font-bold">Description</Th>
+                        <Th className="label-text text-xl font-mono font-bold">Status</Th>
+                        <Th className="label-text text-xl font-mono font-bold">Action</Th>
                     </Tr>
                 </Thead>
 

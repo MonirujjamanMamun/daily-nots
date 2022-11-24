@@ -2,7 +2,6 @@ import logo from './logo.svg';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home';
-import Details from './Pages/Details';
 import DataNotFound from './Pages/DataNotFound';
 import { createContext, useEffect, useState } from 'react';
 import UpdateNote from './Pages/UpdateNote';
