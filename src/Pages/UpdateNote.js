@@ -39,12 +39,13 @@ const UpdateNote = () => {
     }
 
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero min-h-screen bg-[#0ea4e927]">
             <div className="hero-content flex-col justify-center align-middle">
+                {/* update notes title  */}
                 <div className="text-center lg:text-left">
-                    <h1 className="text-3xl font-bold py-10 font-serif">Update Your Notes</h1>
+                    <h1 className="text-3xl font-bold mb-2 font-serif">Update Your Notes</h1>
                 </div>
-
+                {/* update notes input start here  */}
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <form onSubmit={updateFormHandel} className="card-body">
                         <div className="form-control">
@@ -67,13 +68,13 @@ const UpdateNote = () => {
                             </label>
                             <TextArea
                                 className="input input-bordered"
-                                // placeholder={"Not Details"}
                                 name={"description"}
                                 value={note?.description}
                                 onChange={handelChange}
                             />
                         </div>
-                        <div className='mt-5'>
+                        {/* select option */}
+                        <div className=''>
                             <label htmlFor="notes"
                                 className="label-text text-xl font-mono font-bold"
                             >Select: </label>

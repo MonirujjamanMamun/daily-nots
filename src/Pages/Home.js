@@ -26,7 +26,7 @@ const Home = () => {
     }
 
     const updateNote = (id) => {
-        navigate(`/updatesnote/${id}`);
+        navigate(`updatesnote/${id}`);
     }
 
     const searchHandel = (e) => {
@@ -47,12 +47,8 @@ const Home = () => {
 
 
     return (
-        <div className='w-10/12 mx-auto mt-10'>
-            <h2 className='text-2xl font-bold p-5 text-center font-mono uppercase'>All Notes</h2>
-            <div className='flex justify-center'>
-                <Link to='/form'> <PrimaryButton className='font-mono font-bold'>Add Nots</PrimaryButton></Link>
-            </div>
-
+        <div className='w-11/12 mx-auto'>
+            {/* form start here  */}
             <div className='flex justify-between items-center mb-5'>
 
                 {/* togol area  */}
@@ -84,6 +80,7 @@ const Home = () => {
                 </div>
             </div>
 
+            {/* table start here  */}
             <Table>
                 <Thead>
                     <Tr>
@@ -103,11 +100,12 @@ const Home = () => {
                                 <Td>{note.status}</Td>
                                 <Td>
                                     <div className='cursor-pointer flex justify-center align-middle'>
+                                        {/* form edit icon  */}
                                         <span
                                             className='text-2xl bg-[#0ea5e9] text-white mr-5'
                                             onClick={() => updateNote(note.id)}
                                         ><BiEdit /></span>
-
+                                        {/* form delete icon  */}
                                         <span
                                             className='text-2xl text-red-700'
                                             onClick={() => deleteNote(note.id)}><MdDelete
@@ -118,13 +116,8 @@ const Home = () => {
 
                             </Tr>)
                     }
-
                 </Tbody>
             </Table>
-
-
-
-
         </div >
     );
 };

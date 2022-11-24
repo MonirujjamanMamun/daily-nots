@@ -5,14 +5,18 @@ import Home from './Pages/Home';
 import DataNotFound from './Pages/DataNotFound';
 import { createContext, useEffect, useState } from 'react';
 import UpdateNote from './Pages/UpdateNote';
-import Form from './Pages/Form';
+import HomeDashboard from './Pages/HomeDashboard';
+import AddNotes from './Pages/AddNotes';
 
+// context api 
 export const MyContext = createContext('');
 
 
 function App() {
 
   const [notes, setNotes] = useState([]);
+
+  // get data from localStorage 
   useEffect(() => {
     const localNots = localStorage.getItem("notes");
     setNotes(JSON.parse(localNots));
@@ -21,12 +25,14 @@ function App() {
   return (
     <MyContext.Provider value={{ notes, setNotes }}>
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/form' element={<Form />} />
-        <Route path='/updatesnote/:id' element={<UpdateNote />} />
-        <Route path='*' element={<DataNotFound />} />
+        <Route path='/' element={<HomeDashboard />}>
+          <Route index element={<Home />} />
+          <Route path='addnotes' element={<AddNotes />} />
+          <Route path='updatesnote/:id' element={<UpdateNote />} />
+          <Route path='*' element={<DataNotFound />} />
+        </Route>
       </Routes>
-    </MyContext.Provider>
+    </MyContext.Provider >
   );
 }
 
