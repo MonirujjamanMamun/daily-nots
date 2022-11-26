@@ -7,6 +7,8 @@ import { createContext, useEffect, useState } from 'react';
 import UpdateNote from './Pages/UpdateNote';
 import HomeDashboard from './Pages/HomeDashboard';
 import AddNotes from './Pages/AddNotes';
+import MoviesView from './Pages/MoviesView';
+
 
 // context api 
 export const MyContext = createContext('');
@@ -29,6 +31,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path='addnotes' element={<AddNotes />} />
           <Route path='updatesnote/:id' element={<UpdateNote />} />
+          <Route path='moviesview' element={<MoviesView />} />
           <Route path='*' element={<DataNotFound />} />
         </Route>
       </Routes>

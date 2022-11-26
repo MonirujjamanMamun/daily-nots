@@ -11,9 +11,10 @@ const HomeDashboard = () => {
             </div>
             <div className="drawer-side">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                <ul className="menu p-4 w-80 bg-[#0f172aec] text-white">
+                <ul className="menu p-4 w-80 bg-[#293462] text-white">
                     <li><Link to='/' className='text-xl font-bold p-5 text-center font-mono uppercase'>All Notes</Link></li>
                     <li><Link to='addnotes' className='text-xl font-bold p-5 text-center font-mono uppercase'>Add Notes</Link></li>
+                    <li><Link to='moviesview' className='text-xl font-bold p-5 text-center font-mono uppercase'>All movies</Link></li>
 
                 </ul>
 

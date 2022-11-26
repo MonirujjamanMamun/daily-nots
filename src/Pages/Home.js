@@ -47,7 +47,10 @@ const Home = () => {
 
 
     return (
-        <div className='w-11/12 mx-auto'>
+        <div className='w-11/12 mx-auto h-5/6'>
+            <div className="mx-auto mb-10">
+                <h1 className="text-3xl font-bold mb-10 font-serif">All Notes Here</h1>
+            </div>
             {/* form start here  */}
             <div className='flex justify-between items-center mb-5'>
 
