@@ -14,10 +14,8 @@ const HomeDashboard = () => {
                 <ul className="menu p-4 w-80 bg-[#293462] text-white">
                     <li><Link to='/' className='text-xl font-bold p-5 text-center font-mono uppercase'>All Notes</Link></li>
                     <li><Link to='addnotes' className='text-xl font-bold p-5 text-center font-mono uppercase'>Add Notes</Link></li>
-                    <li><Link to='moviesview' className='text-xl font-bold p-5 text-center font-mono uppercase'>All movies</Link></li>
-
+                    <li><Link to='postview' className='text-xl font-bold p-5 text-center font-mono uppercase'>All movies</Link></li>
                 </ul>
-
             </div>
         </div>
     );

@@ -1,10 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import fetchMovies from "../../Pages/Share/fetchData";
 
-export const fetchMovies = createAsyncThunk("movies/fetcMovices", async () => {
-    const res = await axios.get("https://jsonplaceholder.typicode.com/users");
-    return res.data;
-})
+
 
 const movieSlice = createSlice({
     name: "movies",
